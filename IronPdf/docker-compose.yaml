@@ -1,0 +1,21 @@
+#docker-compose -f docker-compose.yaml up --build
+
+version: '3.4'
+
+services:
+   
+  iron.pdf.min:
+    build:
+      context: .
+      dockerfile: ./IronPdf/Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - iron
+ 
+networks:
+
+  iron:
+    driver: bridge
+
+
