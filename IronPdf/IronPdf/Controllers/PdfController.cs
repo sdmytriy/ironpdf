@@ -21,7 +21,8 @@ namespace IronPdf.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        //public async Task<IActionResult> Get()
+        public IActionResult Get()
         {
             var formattedContent = new TemplateFileResponse();
 
@@ -29,7 +30,8 @@ namespace IronPdf.Controllers
             {
                 _logger.LogInformation("Starting PDF conversion...");
 
-                formattedContent.FileData = await _converter.Convert("<html>Iron PDF is buggy!</html>");
+                formattedContent.FileData = _converter.Convert("<html>Iron PDF 2021.9.3678 is buggy!</html>");
+                formattedContent.FileData = _converter.ConvertFile(@"C:\uptodate\github\ironpdf\IronPdf\AU_AGR_v_1_0_0.html");
                 formattedContent.FileType = "application/pdf";
 
                 _logger.LogInformation("Done.");

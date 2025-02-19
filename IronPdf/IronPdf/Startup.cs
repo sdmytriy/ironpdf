@@ -19,6 +19,11 @@ namespace IronPdf
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            string license = Configuration["IronPdfLicenseKey"];
+            IronPdf.License.LicenseKey = license;
+
+            Console.WriteLine($"IronPdf is licensed : {IronPdf.License.IsValidLicense(license)}");
         }
 
         public IConfiguration Configuration { get; }

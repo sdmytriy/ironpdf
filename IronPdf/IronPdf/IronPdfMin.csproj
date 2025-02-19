@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IronPdf" Version="2022.1.4599" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
-    <PackageReference Include="PDF.Core" Version="2020.12.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
   </ItemGroup>
 
